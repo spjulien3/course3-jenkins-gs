@@ -2,9 +2,9 @@ version: "3"
 services:
   jenkins:
     image: jenkins/jenkins # :latest (weekly), :lts, :jdk17, :jdk11, :lts-jdk17, etc
-    publish:
+    ports:
       - "8080:8080" # drop 127.0.0.1: if you want remote access to Jenkins
-    publish:
+    ports:
       - "50000:50000"
     volumes:
       - jenkins_home:/var/jenkins_home # persist data across container recreation, updating image, etc
